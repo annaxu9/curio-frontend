@@ -12,6 +12,7 @@ import {
 import TopicList from "./components/TopicList";
 import TopicDetail from "./components/TopicDetail";
 import Quiz from "./components/Quiz";
+import ModuleContent from "./components/ModuleContent";
 import SchoolIcon from "@mui/icons-material/School";
 
 const theme = createTheme({
@@ -130,6 +131,10 @@ function App() {
               <Routes>
                 <Route path="/" element={<TopicList />} />
                 <Route path="/topics/:topicId" element={<TopicDetail />} />
+                <Route
+                  path="/topics/:topicId/modules/:moduleId"
+                  element={<ModuleContent />}
+                />
                 <Route path="/quiz/:quizId" element={<Quiz />} />
               </Routes>
             </Container>

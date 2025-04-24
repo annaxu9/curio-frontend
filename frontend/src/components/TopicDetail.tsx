@@ -226,7 +226,9 @@ const TopicDetail: React.FC = () => {
                 size="large"
                 startIcon={<SchoolIcon />}
                 onClick={() => {
-                  /* Handle start module */
+                  navigate(
+                    `/topics/${topic.topic_id}/modules/${module.module_id}`
+                  );
                 }}
               >
                 Start Module
