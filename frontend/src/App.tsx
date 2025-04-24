@@ -11,6 +11,8 @@ import {
 } from "@mui/material";
 import TopicList from "./components/TopicList";
 import TopicDetail from "./components/TopicDetail";
+import Quiz from "./components/Quiz";
+import SchoolIcon from "@mui/icons-material/School";
 
 const theme = createTheme({
   palette: {
@@ -95,14 +97,32 @@ function App() {
           sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
         >
           <AppBar position="static" color="default" elevation={0}>
-            <Toolbar>
-              <Typography
-                variant="h6"
-                component="div"
-                sx={{ flexGrow: 1, fontWeight: 600 }}
-              >
-                Learning Platform
-              </Typography>
+            <Toolbar
+              sx={{
+                minHeight: 64,
+                backgroundColor: "background.paper",
+                borderBottom: "1px solid",
+                borderColor: "divider",
+                width: "100%",
+                maxWidth: "100%",
+              }}
+            >
+              <Container maxWidth="lg" sx={{ width: "100%" }}>
+                <Typography
+                  variant="h6"
+                  component="div"
+                  sx={{
+                    fontWeight: 600,
+                    color: "primary.main",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 1,
+                  }}
+                >
+                  <SchoolIcon />
+                  Learning Platform
+                </Typography>
+              </Container>
             </Toolbar>
           </AppBar>
           <Box component="main" sx={{ flexGrow: 1, py: 4 }}>
@@ -110,6 +130,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<TopicList />} />
                 <Route path="/topics/:topicId" element={<TopicDetail />} />
+                <Route path="/quiz/:quizId" element={<Quiz />} />
               </Routes>
             </Container>
           </Box>

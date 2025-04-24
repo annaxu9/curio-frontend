@@ -138,7 +138,9 @@ const TopicDetail: React.FC = () => {
             size="large"
             startIcon={<CheckCircleIcon />}
             onClick={() => {
-              /* Handle take quiz */
+              if (topic.prerequisite_quiz_id) {
+                navigate(`/quiz/${topic.prerequisite_quiz_id}`);
+              }
             }}
           >
             Take Prerequisite Quiz
